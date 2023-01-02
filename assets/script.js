@@ -2,7 +2,18 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
-  
+  var nowTime = time().format("MMMM Do YYYY");
+  var dateShow = document.getElementById("currentDay");
+  dateShow.innerHTML = nowTime;
+  var nowHour = time().format("HH")
+
+  $("#clearBtn").click(function (event) {
+    event.preventDefault;
+    $("textarea").val("");
+    localStorage.clear();
+  });
+
+  $(".time-div")
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
