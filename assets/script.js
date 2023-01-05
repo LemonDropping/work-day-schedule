@@ -14,10 +14,24 @@ $(document).ready(function () {
   shownDate.innerHTML = now
   var hour = moment().format("HH");
 
+  $("#clearFieldsBtn").click(function (event) {
+    event.preventDefault();
+    $("textarea").val("");
+    localStorage.clear();
+  });
+  
+  if (currentHour == timeDiv) {
+    $(this).addClass("present");
+    $(this).children(".description").addClass("white-text");
+  } else if (currentHour < timeDiv) {
+    $(this).removeClass("present");
+    $(this).addClass("future");
+  } else if (currentHour > timeDiv) {
+    $(this).removeClass("future");
+    $(this).addClass("past");
+  }
   var saveButton = document.getElementById("save-button");
 
-  saveButton.addEventListener("click", function(event) {
-    event.preventDefault();
   });
 });
 
