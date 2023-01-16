@@ -4,9 +4,22 @@
 const currentDate = dayjs().format('YYYY-MM-DD HH:mm:ss');
 const currentHour = dayjs().format('HH');
 $('#currentDay').text(currentDate);
-console.log(currentDate);
 
+var textInput = document.getElementById('text');
+var buttonEl = document.getElementById('save-button');
 
+  buttonEl.addEventListener('click', addAnswerToLocalStorage);
+  function addAnswerToLocalStorage() {
+    var value = textInput.value;
+    localStorage.setItem("text", value);
+  };
+
+  $('hour-compare').each(function () {
+    var hourCompare = $(this).attr("id").split("-")[1];
+    if (currentHour === hourCompare) {
+      $(this).addClass("present");
+      $(this).removeClass("future");
+      $(this).removeClass("past");
 
     
   
