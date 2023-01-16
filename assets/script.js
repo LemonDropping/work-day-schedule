@@ -5,21 +5,15 @@ const currentDate = dayjs().format('YYYY-MM-DD HH:mm:ss');
 const currentHour = dayjs().format('HH');
 $('#currentDay').text(currentDate);
 
-var textInput = document.getElementById('text');
-var buttonEl = document.getElementById('save-button');
+var textInput = document.getElementById('#text');
+var buttonEl = document.getElementById('#save-button');
+  $('#save-button').on('click', function() {
+    var textInput = $(this).siblings('.description').val();
+    var time = $(this).parent().attr('id');
+    localStorage.setItem(time, textInput);
+  });
+    
 
-  buttonEl.addEventListener('click', addAnswerToLocalStorage);
-  function addAnswerToLocalStorage() {
-    var value = textInput.value;
-    localStorage.setItem("text", value);
-  };
-
-  $('hour-compare').each(function () {
-    var hourCompare = $(this).attr("id").split("-")[1];
-    if (currentHour === hourCompare) {
-      $(this).addClass("present");
-      $(this).removeClass("future");
-      $(this).removeClass("past");
 
     
   
@@ -40,4 +34,4 @@ var buttonEl = document.getElementById('save-button');
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
+  // TODO: Add code to display the current date in the header of the page
