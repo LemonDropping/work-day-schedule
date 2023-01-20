@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-const currentDate = dayjs().format('YYYY-MM-DD HH:mm:ss');
+const currentDate = dayjs().format('MM-DD-YYYY HH:mm:ss');
 const currentHour = dayjs().format('HH');
 $('#currentDay').text(currentDate);
 
@@ -11,6 +11,7 @@ var buttonEl = document.getElementById('#save-button');
     var textInput = $(this).siblings('.description').val();
     var time = $(this).parent().attr('id');
     localStorage.setItem(time, textInput);
+    console.log(buttonEl);
   });
     
 
