@@ -8,5 +8,7 @@ I built this application in order to have a simple workday planner. It will aid 
 2. Hit the save button and your to-do item will be listed.
 3. If you leave the page, Your work day schedule will still be available and like you left it when you return to the page. 
 
+## Deployed Link
+Here is the [link](https://lemondropping.github.io/work-day-schedule/) to the live website
 ## Credits
 - Cole Roberts
